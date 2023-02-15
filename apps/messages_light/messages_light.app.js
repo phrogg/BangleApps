@@ -14,7 +14,6 @@ let LOG=function(){
   //print.apply(null, arguments);
 }
 
-// test
 
 
 let settings= (()=>{
@@ -156,7 +155,7 @@ let showMessage = function(msg){
     {type:"v",fillx:1,filly:1,pad:2 ,halign:-1,c:[]},
 
    
-   setTimeout(function() {Bangle.showClock();})
+   setTimeout(function() {Bangle.showClock();}, 5000)
     
   ]});
  
