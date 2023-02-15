@@ -155,7 +155,7 @@ let showMessage = function(msg){
     {type:"v",fillx:1,filly:1,pad:2 ,halign:-1,c:[]},
 
    
-   setTimeout(function() {Bangle.showClock();}, 5000)
+   
     
   ]});
  
@@ -174,6 +174,8 @@ let showMessage = function(msg){
   Bangle.setLCDPower(1);
 
   DrawLock();
+  
+  setTimeout(function() {Bangle.showClock();}, 15000)
 
 };
 let DrawLock=function()
