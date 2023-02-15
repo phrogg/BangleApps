@@ -175,7 +175,10 @@ let showMessage = function(msg){
 
   DrawLock();
   
-  setTimeout(function() {Bangle.showClock();}, 15000)
+  // if time in settings for dismissing a message is set then reflect the changes here
+  if(settings.time2Dismiss != 0) {
+    setTimeout(function() {Bangle.showClock();}, settings.time2Dismiss)
+  }
 
 };
 let DrawLock=function()
