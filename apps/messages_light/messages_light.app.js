@@ -175,7 +175,7 @@ let showMessage = function(msg){
 
   DrawLock();
   
-  settings.time2Dismiss = 0;
+  settings.time2Dismiss = 15000;
   
   // if time in settings for dismissing a message is set then reflect the changes here
   if(settings.time2Dismiss != 0) {
