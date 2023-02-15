@@ -156,7 +156,7 @@ let showMessage = function(msg){
     {type:"v",fillx:1,filly:1,pad:2 ,halign:-1,c:[]},
 
    
-   
+   setTimeout(function() {Bangle.showClock();})
     
   ]});
  
