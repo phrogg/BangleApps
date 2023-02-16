@@ -178,8 +178,11 @@ let showMessage = function(msg){
   settings.time2Dismiss = 15000;
   
   // if time in settings for dismissing a message is set then reflect the changes here
-  if(settings.time2Dismiss != 0) {
-    setTimeout(function() {Bangle.showClock();}, settings.time2Dismiss)
+  if(settings.time2Dismiss != 0) { //EventQueue
+    setTimeout(function() {
+      Bangle.exit();
+      Bangle.showClock();
+    }, settings.time2Dismiss)
   }
 
 };
@@ -230,7 +233,8 @@ let showCall = function(msg)
       title = (lines.length>2) ? lines.slice(0,2).join("\n")+"..." : lines.join("\n");
     }
   }
-  let Layout = require("Layout");
+  let Layout = reo
+  ire("Layout");
   layout = new Layout({ type:"v", c: [
     {type:"h", fillx:1, bgCol:settings.colHeadBg,  c: [
       { type:"btn", src:require("messageicons").getImage(msg), col:require("messageicons").getColor(msg), pad: 3},
