@@ -180,8 +180,8 @@ let showMessage = function(msg){
   // if time in settings for dismissing a message is set then reflect the changes here
   if(settings.time2Dismiss != 0) { //EventQueue
     setTimeout(function() {
-      Bangle.exit();
       Bangle.showClock();
+      Bangle.exit();
     }, settings.time2Dismiss)
   }
 
