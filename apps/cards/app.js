@@ -91,7 +91,7 @@ function printLinearCode(binary) {
 }
 
 function showCode(card) {
-  Bangle.setLCDPower(1); 
+  Bangle.setLCDBrightness(1); 
   widget_utils.hide();
   E.showScroller();
   // keeping it on rising edge would come back twice..
@@ -129,7 +129,7 @@ function showCode(card) {
       g.setFontAlign(0,0);
       g.drawString(card.value, g.getWidth()/2, g.getHeight()/2);
   }
-  Bangle.setLCDPower(oldBrightness);
+  Bangle.setLCDBrightness(oldBrightness);
 }
 
 function showCard(card) {
