@@ -129,7 +129,7 @@ function showCode(card) {
       g.setFontAlign(0,0);
       g.drawString(card.value, g.getWidth()/2, g.getHeight()/2);
   }
-  Bangle.setLCDBrightness(oldBrightness);
+  //Bangle.setLCDBrightness(oldBrightness);
 }
 
 function showCard(card) {
