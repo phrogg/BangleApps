@@ -14,6 +14,8 @@
 Bangle.loadWidgets();
 Bangle.drawWidgets();
 
+const oldBrightness = Bangle.brightness;
+
 //may make it configurable in the future
 const WHITE=-1
 const BLACK=0
@@ -89,6 +91,7 @@ function printLinearCode(binary) {
 }
 
 function showCode(card) {
+  Bangle.setLCDPower(1); 
   widget_utils.hide();
   E.showScroller();
   // keeping it on rising edge would come back twice..
@@ -126,6 +129,7 @@ function showCode(card) {
       g.setFontAlign(0,0);
       g.drawString(card.value, g.getWidth()/2, g.getHeight()/2);
   }
+  Bangle.setLCDPower(oldBrightness);
 }
 
 function showCard(card) {
