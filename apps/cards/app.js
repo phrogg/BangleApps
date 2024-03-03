@@ -11,21 +11,24 @@
   }
 */
 
-let settings;
-
-try {
-    const d = require('Storage').readJSON("setting.json", 1) || {};
-    settings = Object.assign({
-        'brightness': 0.1
-    }, d || {});
-    return d;
-} catch(e){
-  console.log(e.toString());
-  return;
-}
-
 Bangle.loadWidgets();
 Bangle.drawWidgets();
+
+// get brightness
+let settings;
+
+function loadBrightness() {
+  try {
+      const d = require('Storage').readJSON("setting.json", 1) || {};
+      settings = Object.assign({
+          'brightness': 0.1
+      }, d || {});
+      return d;
+  } catch(e){
+    console.log(e.toString());
+    return;
+  }
+}
 
 //may make it configurable in the future
 const WHITE=-1
@@ -223,4 +226,5 @@ function showList() {
     back : () => load()
   });
 }
+loadBrightness();
 showList();
