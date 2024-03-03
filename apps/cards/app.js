@@ -18,8 +18,8 @@ Bangle.drawWidgets();
 let brightness;
 
 function loadBrightness() {
-    const brightnessFromSettings = require('Storage').readJSON("setting.json", 1) || {};
-    brightness = brightnessFromSettings.brightness || 0.1;
+    const tmpGetBrightnessFromSettings = require('Storage').readJSON("setting.json", 1) || {};
+    brightness = tmp.tmpGetBrightnessFromSettings || 0.1;
 }
 
 //may make it configurable in the future
