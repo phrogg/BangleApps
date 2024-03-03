@@ -105,7 +105,7 @@ function printLinearCode(binary) {
 }
 
 function showCode(card) {
-  if (settings.fullBrightness) {
+  if(settings.fullBrightness) {
     Bangle.setLCDBrightness(1);
   }
   widget_utils.hide();
@@ -148,7 +148,7 @@ function showCode(card) {
 }
 
 function showCard(card) {
-  if (settings.fullBrightness) {
+  if(settings.fullBrightness) {
     Bangle.setLCDBrightness(brightness.brightness);
   }
   var lines = [];
@@ -230,7 +230,7 @@ function showList() {
     back : () => load()
   });
 }
-if (settings.fullBrightness) {
+if(settings.fullBrightness) {
   loadBrightness();
 }
 showList();
