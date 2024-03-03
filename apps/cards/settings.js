@@ -19,7 +19,7 @@
         settings.fullBrightness = v;
         updateSettings();
       }
-    },
+    }
   };
   E.showMenu(mainmenu);
 })
