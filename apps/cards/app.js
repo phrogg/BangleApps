@@ -11,10 +11,23 @@
   }
 */
 
+let settings;
+
+function loadSettings() {
+  try {
+      const d = require('Storage').readJSON("setting.json", 1) || {};
+      settings = Object.assign({
+          'brightness': 0.1
+      }, d || {});
+      return d;
+  } catch(e){
+    console.log(e.toString());
+    return;
+  }
+}
+
 Bangle.loadWidgets();
 Bangle.drawWidgets();
-
-const oldBrightness = Bangle.brightness;
 
 //may make it configurable in the future
 const WHITE=-1
@@ -91,7 +104,8 @@ function printLinearCode(binary) {
 }
 
 function showCode(card) {
-  Bangle.setLCDBrightness(1); 
+  loadSettings();
+  Bangle.setLCDBrightness(1);
   widget_utils.hide();
   E.showScroller();
   // keeping it on rising edge would come back twice..
@@ -129,7 +143,7 @@ function showCode(card) {
       g.setFontAlign(0,0);
       g.drawString(card.value, g.getWidth()/2, g.getHeight()/2);
   }
-  //Bangle.setLCDBrightness(oldBrightness);
+  Bangle.setLCDBrightness(settings.brightness);
 }
 
 function showCard(card) {
