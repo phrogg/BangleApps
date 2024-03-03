@@ -143,10 +143,10 @@ function showCode(card) {
       g.setFontAlign(0,0);
       g.drawString(card.value, g.getWidth()/2, g.getHeight()/2);
   }
-  Bangle.setLCDBrightness(settings.brightness);
 }
 
 function showCard(card) {
+  Bangle.setLCDBrightness(settings.brightness);
   var lines = [];
   var bodyFont = fontBig;
   if(!card) return;
