@@ -104,7 +104,6 @@ function printLinearCode(binary) {
 }
 
 function showCode(card) {
-  loadSettings();
   Bangle.setLCDBrightness(1);
   widget_utils.hide();
   E.showScroller();
@@ -146,6 +145,7 @@ function showCode(card) {
 }
 
 function showCard(card) {
+  loadSettings();
   Bangle.setLCDBrightness(settings.brightness);
   var lines = [];
   var bodyFont = fontBig;
