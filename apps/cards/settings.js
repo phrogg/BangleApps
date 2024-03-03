@@ -19,6 +19,7 @@
       onchange: v => {
         settings.fullBrightness = v;
         updateSettings();
+        // test
       }
     }
   };
