@@ -13,6 +13,12 @@
         settings.useToday = v;
         updateSettings();
       }
+    /*LANG*/"Full Brightness" : {
+      value : !!settings.fullBrightness,
+      onchange: v => {
+        settings.fullBrightness = v;
+        updateSettings();
+      }
     },
   };
   E.showMenu(mainmenu);
