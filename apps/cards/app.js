@@ -13,17 +13,15 @@
 
 let settings;
 
-function loadSettings() {
-  try {
-      const d = require('Storage').readJSON("setting.json", 1) || {};
-      settings = Object.assign({
-          'brightness': 0.1
-      }, d || {});
-      return d;
-  } catch(e){
-    console.log(e.toString());
-    return;
-  }
+try {
+    const d = require('Storage').readJSON("setting.json", 1) || {};
+    settings = Object.assign({
+        'brightness': 0.1
+    }, d || {});
+    return d;
+} catch(e){
+  console.log(e.toString());
+  return;
 }
 
 Bangle.loadWidgets();
@@ -145,7 +143,6 @@ function showCode(card) {
 }
 
 function showCard(card) {
-  loadSettings();
   Bangle.setLCDBrightness(settings.brightness);
   var lines = [];
   var bodyFont = fontBig;
