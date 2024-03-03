@@ -15,12 +15,12 @@ Bangle.loadWidgets();
 Bangle.drawWidgets();
 
 // get brightness
-let settings;
+let brightness;
 
 function loadBrightness() {
   try {
       const d = require('Storage').readJSON("setting.json", 1) || {};
-      settings = Object.assign({
+      brightness = Object.assign({
           'brightness': 0.1
       }, d || {});
       return d;
@@ -146,7 +146,7 @@ function showCode(card) {
 }
 
 function showCard(card) {
-  Bangle.setLCDBrightness(settings.brightness);
+  Bangle.setLCDBrightness(brightness.brightness);
   var lines = [];
   var bodyFont = fontBig;
   if(!card) return;
