@@ -105,7 +105,9 @@ function printLinearCode(binary) {
 }
 
 function showCode(card) {
-  Bangle.setLCDBrightness(1);
+  if (!settings.fullBrightness) {
+    Bangle.setLCDBrightness(1);
+  }
   widget_utils.hide();
   E.showScroller();
   // keeping it on rising edge would come back twice..
@@ -146,7 +148,9 @@ function showCode(card) {
 }
 
 function showCard(card) {
-  Bangle.setLCDBrightness(brightness.brightness);
+  if (!settings.fullBrightness) {
+    Bangle.setLCDBrightness(brightness.brightness);
+  }
   var lines = [];
   var bodyFont = fontBig;
   if(!card) return;
@@ -226,5 +230,7 @@ function showList() {
     back : () => load()
   });
 }
-loadBrightness();
+if (!settings.fullBrightness) {
+  loadBrightness();
+}
 showList();
