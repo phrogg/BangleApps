@@ -15,7 +15,7 @@
       }
     },
     /*LANG*/"Full Brightness" : {
-      value : !settings.fullBrightness,
+      value : !!settings.fullBrightness,
       onchange: v => {
         settings.fullBrightness = v;
         updateSettings();
