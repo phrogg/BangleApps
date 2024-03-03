@@ -12,7 +12,8 @@
       onchange: v => {
         settings.useToday = v;
         updateSettings();
-      },
+      }
+    },
     /*LANG*/"Full Brightness" : {
       value : !!settings.fullBrightness,
       onchange: v => {
