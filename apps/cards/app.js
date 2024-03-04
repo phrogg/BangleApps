@@ -97,6 +97,7 @@ function printLinearCode(binary) {
 }
 
 function showCode(card) {
+  // set to full bright when the setting is true
   if(settings.fullBrightness) {
     Bangle.setLCDBrightness(1);
   }
@@ -140,6 +141,7 @@ function showCode(card) {
 }
 
 function showCard(card) {
+  // reset brightness to old value after maxing it out
   if(settings.fullBrightness) {
     Bangle.setLCDBrightness(brightness);
   }
