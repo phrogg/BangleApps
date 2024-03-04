@@ -1,6 +1,6 @@
 {
-  "id": "cards+",
-  "name": "Cards+",
+  "id": "cardsplus",
+  "name": "CardsPlus",
   "version": "0.01",
   "description": "Display loyalty cards without the meta information",
   "icon": "app.png",
