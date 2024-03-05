@@ -153,6 +153,7 @@ function showCard(card, comingFromCode) {
   setTimeout(function() {
     if(!goBack) {
       showCode(card);
+      return;
     }
   }, 500);
   // reset brightness to old value after maxing it out
