@@ -17,5 +17,5 @@
     {"name":"cardsplus.code39.js","url":"code39.js"},
     {"name":"cardsplus.img","url":"app-icon.js","evaluate":true}
   ],
-  "data": [{"name":"cards.settings.json"}]
+  "data": [{"name":"cardsplus.settings.json"}]
 }
