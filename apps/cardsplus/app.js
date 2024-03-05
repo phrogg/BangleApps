@@ -154,7 +154,7 @@ function showCard(card, comingFromCode) {
     if(!goBack) {
       showCode(card);
     }
-  }, 1000);
+  }, 500);
   // reset brightness to old value after maxing it out
   if(settings.fullBrightness) {
     Bangle.setLCDBrightness(brightness);
