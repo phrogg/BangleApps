@@ -104,7 +104,7 @@ function showCode(card) {
   widget_utils.hide();
   E.showScroller();
   // keeping it on rising edge would come back twice..
-  setWatch(()=>showCard(card), BTN, {edge:"falling"});
+  setWatch(()=>showCard(card, true), BTN, {edge:"falling"});
   // theme independent
   g.setColor(WHITE).fillRect(0, 0, g.getWidth(), g.getHeight());
   switch (card.type) {
@@ -140,19 +140,32 @@ function showCode(card) {
   }
 }
 
-function showCard(card) {
+function showCard(card, comingFromCode) {
+  // user wants to go back
   var goBack = false;
-  // reset brightness to old value after maxing it out
-  if(settings.fullBrightness) {
-    Bangle.setLCDBrightness(brightness);
+  if(comingFromCode) {
+    goBack = true;
+    showList();
+    return;
   }
 
+  // if not show card after 1 second
   setTimeout(function() {
     if(!goBack) {
       showCode(card);
     }
   }, 1000);
+  // reset brightness to old value after maxing it out
+  if(settings.fullBrightness) {
+    Bangle.setLCDBrightness(brightness);
+  }
+  var lines = [];
+  var bodyFont = fontBig;
+  if(!card) return;
+  g.setFont(bodyFont);
 
+  if (card.name) lines = g.wrapString(card.name, g.getWidth()-10);
+  var titleCnt = lines.length;
   lines = lines.concat("",/*LANG*/"< Back");
   var titleBgColor = card.color ? getColor(card.color) : g.theme.bg2;
   var titleColor = g.theme.fg2;
@@ -181,7 +194,6 @@ function showCard(card) {
       goBack = true;
       showList();
     }
-    
   });
 }
 
